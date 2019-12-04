@@ -5,7 +5,7 @@ from tensorflow.contrib.tensorboard.plugins import projector
 
 from utils import mnist_reader
 from utils.helper import get_sprite_image
-from configs import DATA_DIR, VIS_DIR
+from configs import DATA_DIR
 import os
 
 
