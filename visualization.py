@@ -7,7 +7,7 @@ from utils import mnist_reader
 from utils.helper import get_sprite_image
 from configs import DATA_DIR
 import os
-
+import argparse
 
 class FashionMNISTVisualizer:
     """
@@ -80,9 +80,35 @@ class FashionMNISTVisualizer:
         saver = tf.train.Saver()
         saver.save(sess, os.path.join(dir, 'model.ckpt'), 0)
 
+    def get_image(self, index):
+        """
+        @param index - Index of the image to extract from training set
+        @return - Single image 784 x 1
+        """
+        return self._X[index]
+
+    def colorbar_image(self, image):
+        """
+        @param image - 784 x 1 image that will be displayed
+        @return None
+        """
+        plt.figure()
+        plt.imshow(np.reshape(image, (FashionMNISTVisualizer.WIDTH, FashionMNISTVisualizer.HEIGHT)))
+        plt.colorbar()
+        plt.grid(False)
+        plt.show()
+
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--tensorboard", help="Dumps Tensorboard files to /tensorvis", action="store_true")
+    parser.add_argument("--single", help="Visualizes a single image file")
+    args = parser.parse_args()
     vis = FashionMNISTVisualizer()
-    vis.load_mnist_data(data_path=DATA_DIR, kind='t10k')
-    vis.generate_tensorflow_files()
-    vis.generate_tensorboard_files()
+    vis.load_mnist_data(data_path=DATA_DIR, kind='train')
+
+    if args.tensorboard:
+        vis.generate_tensorflow_files()
+        vis.generate_tensorboard_files()
+    elif args.single:
+        vis.colorbar_image(vis.get_image(int(args.single)))
