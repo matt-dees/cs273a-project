@@ -6,6 +6,8 @@
 
 1. `pip install matplotlib numpy tensorflow==1.14.0`
 2. Make sure the fashion-mnist directory is added as Sources Root in PyCharm, or that it can be found in `PYTHONPATH`
+3. To run NN models, download project and open the files in juypter notebook. Make sure to have the data folder from fashion-mnist in your local directory.
+4. `pip install opencv-python imutils` 
 
 #### Tensorboard
 
