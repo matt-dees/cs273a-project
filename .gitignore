@@ -1,3 +1,7 @@
 tensorvis/*
 venv/*
 .idea
+*.log
+*.aux
+*.ipynb_checkpoints
+*.synctex.gz
