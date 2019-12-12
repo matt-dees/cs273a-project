@@ -5,3 +5,7 @@ venv/*
 *.aux
 *.ipynb_checkpoints
 *.synctex.gz
+*.bbl
+*.blg
+*.dvi
+*.out
