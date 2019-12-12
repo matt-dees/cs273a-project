@@ -16,7 +16,7 @@ Dumps Tensorboard files to the directory `/tensor`. The data can be inspected in
 1. `tensorboard --logdir=tensorvis --host localhost` from project root directory
 2. Open browser and go to `localhost:6006`. You might need to refresh a few times.
 
-![Tensorboard Visualization](tb.png)
+![Tensorboard Visualization](images/tensorboard_pca.png)
 
 #### Single image
 
@@ -25,7 +25,7 @@ Dumps Tensorboard files to the directory `/tensor`. The data can be inspected in
 A single image at index <single> will pop up. This should be a value between 0 and 59999 (there are 60000 training images). Each image has 784 (28x28) pixels and each pixel is a value 0-255. The pixel values are shown using a colormap.
 
 
-![Single Image Visualization](im0.png)
+![Single Image Visualization](images/single_image.png)
 
 
 ## Neural Network Models
